@@ -1,0 +1,48 @@
+/*
+
+Who knows the nursery rhyme Ten Green Bottles?
+
+Lyrics:
+
+Ten green bottles hanging on the wall,
+Ten green bottles hanging on the wall,
+And if one green bottle should accidentally fall,
+There'll be nine green bottles hanging on the wall.
+
+Nine green bottles hanging on the wall,
+Nine green bottles hanging on the wall,
+And if one green bottle should accidentally fall,
+There'll be eight green bottles hanging on the wall. 
+
+Eight green bottles hanging on the wall...
+Seven green bottles hanging on the wall...
+...
+
+One green bottle hanging on the wall,
+One green bottle hanging on the wall,
+If that one green bottle should accidentally fall,
+There'll be no green bottles hanging on the wall.
+Task
+Write some amazing code to reproduce the above lyrics starting from n green bottles!
+
+parameter n is 1 to 10
+newline terminates every line (including the last)
+don't forget the blank lines between the verses
+
+*/
+
+
+function tenGreenBottles(n) {
+  
+    let number = ["One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"]
+    let str = ""
+    for(let i = n; i > 0; i--){
+        if(i != 1){
+            str += `${number[i-1]} green bottles hanging on the wall,\n${number[i-1]} green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere\'ll be ${number[i-2].toLowerCase()} green ${(number[i-2] == "One")?"bottle":"bottles"} hanging on the wall.\n\n`;
+        }
+        else{
+            str +=`One green bottle hanging on the wall,\nOne green bottle hanging on the wall,\nIf that one green bottle should accidentally fall,\nThere'll be no green bottles hanging on the wall.\n`;
+        }
+    }
+    return str
+  } 
