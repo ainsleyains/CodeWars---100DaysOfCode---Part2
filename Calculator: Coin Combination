@@ -15,13 +15,14 @@ coinCombo(6) --> [1, 1, 0, 0]
 */
 
 
+
 function coinCombo (cents) {
-	let coins = [1,5,10,25];
-  let result = [0,0,0,0];
-  for(let i = 3; i >= 0; i--){
-    result[i] = Math.floor(cents / coins[i])
-    cents -= result * coins[i]
-  }
-  return result
+  const coins = [1,5,10,25];
+    const combo = [0,0,0,0];
+    for (let i = 3; i >= 0 && cents > 0; i--) {
+        combo[i] = Math.floor(cents / coins[i]);
+        cents -= combo[i] * coins[i];
+    }
+    return combo;
 }
 
