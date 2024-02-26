@@ -19,6 +19,13 @@ Switch the boolean value on the same element as the flick itself.
 */
 
 
+function flickSwitch(arr){
+  let on = true;
+  return arr.map(el=>el === 'flick' ? on = !on : on);
+}
+
+
+// Alternative way
 
 function flickSwitch(arr){
  let on = true
