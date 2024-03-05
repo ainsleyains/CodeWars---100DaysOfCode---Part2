@@ -1,0 +1,23 @@
+/*
+
+Disclaimer
+If you're not into math, you might want to skip this kata.
+
+Property
+Some rectangles have a recurring ratio of side lengths (the most famous example is A-series paper). For some of them, when removing a number of inner squares (each such square must have the side length of the smallest side of the rectangle), the ratio a / b is the same as b / c.
+
+Example (n = 1)
+
+
+Task
+Given the number of inner squares to remove from such rectangle n, what is value of the ratio of the longer side over the smaller side? Don't round your result.
+
+1 ≤ n ≤ 1000
+
+
+*/
+
+
+function getRectangleRatio(n) {
+  return (Math.sqrt(n ** 2 + 4) + n) / 2
+}
