@@ -1,0 +1,39 @@
+/*
+
+Given a number of minutes, translate it into a readible human timestamp.
+
+For example: 100 minutes equals "1 hour 40 minutes" And: 52874 minutes equals "1 month 1 week 1 day 17 hours 14 minutes"
+
+Given that each month has 28 days.
+
+The largest amount of minutes you'll have to test for is under a year so you'll have to translate it to Months, Weeks, Days, Hours and Minutes.
+
+
+*/
+
+
+
+function displayValue(value) {
+ const mins = value % 60, 
+       hours = Math.floor(value / 60) % 24,
+       days = Math.floor(value / 60 /24) % 7,
+       weeks = Math.floor(value / 60 / 24 /7) % 4,
+       months = Math.floor(value / 60 / 24 / 7 / 4) % 12;
+  let result = [];
+  if(months == 1) result.push('1 month')
+  else if(months > 1) result.push(months+ ' months');
+  
+  if(weeks ==1) result.push('1 week')
+  else if(weeks > 1) result.push(weeks+ ' weeks')
+  
+  if(days == 1) result.push('1 day')
+  else if(days > 1) result.push(days + ' days')
+  
+   if (hours == 1) result.push('1 hour');
+  else if (hours > 1) result.push(hours + ' hours');
+
+  if (mins == 1) result.push('1 minute');
+  else if (mins > 1) result.push(mins + ' minutes');
+
+  return result.join(' ');
+}
