@@ -1,0 +1,28 @@
+/*
+
+I will give you two strings. I want you to transform stringOne into stringTwo one letter at a time.
+
+Example:
+
+stringOne = 'bubble gum';
+stringTwo = 'turtle ham';
+
+Result:
+bubble gum
+tubble gum
+turble gum
+turtle gum
+turtle hum
+turtle ham
+
+
+*/
+
+
+function mutateMyStrings(stringOne, stringTwo){
+ 
+const res = [];
+	for (let i = 0; i <= stringTwo.length; i++)
+    res.push(stringTwo.slice(0, i) + stringOne.slice(i));
+  return [...new Set(res)].join('\n') + '\n';
+}
