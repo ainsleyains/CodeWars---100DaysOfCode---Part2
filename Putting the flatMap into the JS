@@ -9,5 +9,5 @@ Good luck!
 */
 
 Array.prototype.flatMap = function(f) {
-  return this.reduce((a,b)=>a.concat(f(b)),[])
+  return this.map(f).flat()
 };
