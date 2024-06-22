@@ -1,0 +1,12 @@
+/*
+
+Write a function that takes a list of at least four elements as an argument and returns a list of the middle two or three elements in reverse order.
+
+*/
+
+
+function reverseMiddle(array) {
+  const index = Math.floor(array.length /2);
+  const nums = array.length % 2 === 0 ? array.slice(index-1,index+1):array.slice(index-1,index+2);
+	return nums.reverse();
+}
