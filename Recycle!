@@ -1,0 +1,23 @@
+/*
+
+You are having a BBQ, after the BBQ you are left with the rubbish. You have 3 recycling boxes:
+
+Red: Plastics, Green: Glass, Blue: Card.
+
+You will need to sort the rubbish according to the material and return the number of items in each box in the form of an array i.e [2,3,4] where 2 is the number of plastic items, 3 is the number of glass items and 4 is the number of card items. assume:
+
+Plastics > 0, Glass < 0, Card = 0
+
+*/
+
+
+function recycleMe(recycle){ 
+let red = 0, green = 0, blue = 0
+recycle.map(el=>el > 0 ? red++ : el < 0 ? green++ : blue++)
+  return [red,green,blue]
+}
+
+//Alternative way
+function recycleMe(recycle){ 
+return recycle.reduce(([red,green,blue],el)=>[red+(el > 0), green+(el < 0), blue+(el===0)],[0,0,0]);
+}
