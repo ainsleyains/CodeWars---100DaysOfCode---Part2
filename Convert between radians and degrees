@@ -1,0 +1,17 @@
+/*
+
+Extend the Math object (JS) or module (Ruby and Python) to convert degrees to radians and viceversa. The result should be rounded to two decimal points. Note that all methods of Math object are static.
+
+Example:
+
+Math.degrees(Math.PI) //180deg
+Math.radians(180) //3.14rad
+
+*/
+
+Math.degrees = function(input) {
+    return Math.round((input/Math.PI)*18000)/100 + "deg";
+  };
+Math.radians= function(input) {
+    return Math.round((input/1.8)*Math.PI)/100 + "rad";
+  };
